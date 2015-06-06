@@ -1,6 +1,23 @@
 Rails.application.routes.draw do
   
-  root 'application#hello'
+  resources :microposts
+
+  resources :users
+
+  # the above resources is the same as below
+  # ie it shows the available URL extensions and name of controller (ie users) and action (new, edit, create etc)
+  
+  # get 'users/', to :'users#index'
+  # get 'users/new/', to :'users#new'
+  # get 'users/:user_id/edit', to :'users#edit'
+  # post 'users', to :'users#create'
+  # post 'users/:user_id', to :'users#update'
+  # post 'users/:user_id/destroy', to :'users#destroy'
+  
+  # get 'users/', to :'users#index'
+  
+  #root 'application#hello'
+  root 'users#index'       
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
